@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/luscious-scoop/linked_list/issues"
   },
-  "homepage": "https://github.com/luscious-scoop/linked_list#readme"
+  "homepage": "https://github.com/luscious-scoop/linked_list#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.9.1",
+    "globals": "^17.12.0"
+  }
 }
