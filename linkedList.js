@@ -17,7 +17,7 @@ function LinkedList() {
   };
 
   const toString = () => {
-    let temp = head;
+    let temp = _head;
     let string = '';
     while (temp !== null) {
       string += `(${temp.value}) -> `;
