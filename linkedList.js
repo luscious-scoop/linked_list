@@ -80,6 +80,20 @@ function LinkedList() {
     return false;
   };
 
+  const findIndex = (value) => {
+    let temp = _head;
+    let count = 0;
+
+    while (temp !== null) {
+      if (value.toLowerCase() === temp.value.toLowerCase()) {
+        return count;
+      }
+      temp = temp.next;
+      count++;
+    }
+    return -1;
+  };
+
   return {
     append,
     toString,
@@ -88,6 +102,7 @@ function LinkedList() {
     at,
     size,
     contains,
+    findIndex,
   };
 }
 
@@ -100,4 +115,4 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.contains('cat'));
+console.log(list.findIndex('lol'));
