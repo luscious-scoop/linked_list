@@ -1,15 +1,15 @@
 import { Node } from './node.js';
 
 function LinkedList() {
-  let head = null;
+  let _head = null;
 
   let prev = null;
 
   const append = (value) => {
     let node = new Node(value);
-    if (!head) {
-      head = node;
-      prev = head;
+    if (!_head) {
+      _head = node;
+      prev = _head;
     } else {
       prev.next = node;
       prev = prev.next;
@@ -29,9 +29,17 @@ function LinkedList() {
     return string;
   };
 
+  const head = () => {
+    if (!_head) {
+      return undefined;
+    }
+    return _head.value;
+  };
+
   return {
     append,
     toString,
+    head,
   };
 }
 
@@ -44,4 +52,4 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.toString());
+console.log(list.head());
