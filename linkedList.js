@@ -17,6 +17,9 @@ function LinkedList() {
   };
 
   const toString = () => {
+    if (!_head) {
+      return '';
+    }
     let temp = _head;
     let string = '';
     while (temp !== null) {
