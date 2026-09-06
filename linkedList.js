@@ -39,10 +39,15 @@ function LinkedList() {
     return _head.value;
   };
 
+  const tail = () => {
+    return prev.value;
+  };
+
   return {
     append,
     toString,
     head,
+    tail,
   };
 }
 
@@ -55,4 +60,4 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.head());
+console.log(list.tail());
