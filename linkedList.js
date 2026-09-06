@@ -1,6 +1,6 @@
 import { Node } from './node.js';
 
-function LinkedList() {
+export function LinkedList() {
   let _head = null;
 
   let prev = null;
@@ -126,20 +126,3 @@ function LinkedList() {
     pop,
   };
 }
-
-let list = LinkedList();
-
-list.append('dog');
-list.append('cat');
-list.append('parrot');
-list.append('hamster');
-list.append('snake');
-list.append('turtle');
-
-list.prepend('lion');
-list.append('crocodile');
-console.log(list.toString());
-
-console.log(list.pop());
-
-console.log(list.toString());
