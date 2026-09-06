@@ -68,6 +68,18 @@ function LinkedList() {
     return count;
   };
 
+  const contains = (value) => {
+    let temp = _head;
+
+    while (temp !== null) {
+      if (value.toLowerCase() === temp.value.toLowerCase()) {
+        return true;
+      }
+      temp = temp.next;
+    }
+    return false;
+  };
+
   return {
     append,
     toString,
@@ -75,6 +87,7 @@ function LinkedList() {
     tail,
     at,
     size,
+    contains,
   };
 }
 
@@ -87,4 +100,4 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.size());
+console.log(list.contains('cat'));
