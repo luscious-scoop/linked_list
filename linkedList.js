@@ -106,6 +106,13 @@ function LinkedList() {
     }
   };
 
+  const pop = () => {
+    let oldHeadValue = _head.value;
+    let newHead = _head.next;
+    _head = newHead;
+    return oldHeadValue;
+  };
+
   return {
     append,
     toString,
@@ -116,6 +123,7 @@ function LinkedList() {
     contains,
     findIndex,
     prepend,
+    pop,
   };
 }
 
@@ -130,4 +138,8 @@ list.append('turtle');
 
 list.prepend('lion');
 list.append('crocodile');
-console.log(list.tail());
+console.log(list.toString());
+
+console.log(list.pop());
+
+console.log(list.toString());
