@@ -94,6 +94,18 @@ function LinkedList() {
     return -1;
   };
 
+  const prepend = (value) => {
+    let node = new Node(value);
+    let prevHead;
+    if (!_head) {
+      _head = node;
+    } else {
+      prevHead = _head;
+      _head = node;
+      _head.next = prevHead;
+    }
+  };
+
   return {
     append,
     toString,
@@ -103,6 +115,7 @@ function LinkedList() {
     size,
     contains,
     findIndex,
+    prepend,
   };
 }
 
@@ -115,4 +128,6 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.findIndex('lol'));
+list.prepend('lion');
+list.append('crocodile');
+console.log(list.tail());
