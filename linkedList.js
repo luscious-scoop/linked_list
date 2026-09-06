@@ -43,27 +43,26 @@ function LinkedList() {
     return prev.value;
   };
 
-  const loopList = (index, value) => {
+  const at = (index) => {
     let temp = _head;
     let count = 0;
 
-    while (temp !== null && count <= index) {
+    while (temp !== null) {
       if (count >= index && temp !== null) {
         return temp.value;
       }
       temp = temp.next;
       count++;
     }
-    return value;
+    return undefined;
   };
 
-  const at = (index) => {};
   return {
     append,
     toString,
     head,
     tail,
-    loopList,
+    at,
   };
 }
 
@@ -76,4 +75,4 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.loopList(0));
+console.log(list.at(1));
