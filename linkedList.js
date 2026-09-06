@@ -57,12 +57,24 @@ function LinkedList() {
     return undefined;
   };
 
+  const size = () => {
+    let temp = _head;
+    let count = 0;
+
+    while (temp !== null) {
+      temp = temp.next;
+      count++;
+    }
+    return count;
+  };
+
   return {
     append,
     toString,
     head,
     tail,
     at,
+    size,
   };
 }
 
@@ -75,4 +87,4 @@ list.append('hamster');
 list.append('snake');
 list.append('turtle');
 
-console.log(list.at(1));
+console.log(list.size());
