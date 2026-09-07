@@ -72,7 +72,7 @@ export function LinkedList() {
     let temp = _head;
 
     while (temp !== null) {
-      if (value.toLowerCase() === temp.value.toLowerCase()) {
+      if (value === temp.value) {
         return true;
       }
       temp = temp.next;
@@ -85,7 +85,7 @@ export function LinkedList() {
     let count = 0;
 
     while (temp !== null) {
-      if (value.toLowerCase() === temp.value.toLowerCase()) {
+      if (value === temp.value) {
         return count;
       }
       temp = temp.next;
