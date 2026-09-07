@@ -147,6 +147,23 @@ export function LinkedList() {
     }
   };
 
+  const remove = (index) => {
+    if (index < 1 || index > size()) {
+      throw new RangeError('index out of bound');
+    }
+    if (index === 1) {
+      pop();
+      return;
+    }
+    let prev = getNode(index - 1);
+
+    prev.next = prev.next.next ?? null;
+
+    if (prev.next === null) {
+      _tail = prev;
+    }
+  };
+
   return {
     append,
     toString,
@@ -159,5 +176,6 @@ export function LinkedList() {
     prepend,
     pop,
     insertAt,
+    remove,
   };
 }
