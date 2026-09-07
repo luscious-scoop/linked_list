@@ -89,7 +89,7 @@ export function LinkedList() {
 
   const findIndex = (value) => {
     let temp = _head;
-    let count = 0;
+    let count = 1;
 
     while (temp !== null) {
       if (value === temp.value) {

@@ -19,3 +19,4 @@ list.append(3);
 list.insertAt(1, 10, 11);
 
 console.log(list.toString());
+console.log(list.findIndex(10));
