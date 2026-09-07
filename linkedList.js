@@ -3,16 +3,16 @@ import { Node } from './node.js';
 export function LinkedList() {
   let _head = null;
 
-  let prev = null;
+  let _tail = null;
 
   const append = (value) => {
     let node = new Node(value);
     if (!_head) {
       _head = node;
-      prev = _head;
+      _tail = _head;
     } else {
-      prev.next = node;
-      prev = prev.next;
+      _tail.next = node;
+      _tail = _tail.next;
     }
   };
 
@@ -40,10 +40,10 @@ export function LinkedList() {
   };
 
   const tail = () => {
-    if (!prev) {
+    if (!_tail) {
       return undefined;
     }
-    return prev.value;
+    return _tail.value;
   };
 
   const getNode = (index) => {
