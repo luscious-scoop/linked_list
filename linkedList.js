@@ -114,6 +114,9 @@ export function LinkedList() {
   };
 
   const pop = () => {
+    if (!_head) {
+      return undefined;
+    }
     let oldHeadValue = _head.value;
     let newHead = _head.next;
     _head = newHead;
