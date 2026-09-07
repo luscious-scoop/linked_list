@@ -40,6 +40,9 @@ export function LinkedList() {
   };
 
   const tail = () => {
+    if (!prev) {
+      return undefined;
+    }
     return prev.value;
   };
 
