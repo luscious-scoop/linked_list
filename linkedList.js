@@ -125,6 +125,9 @@ export function LinkedList() {
   };
 
   const insertAt = (index, ...values) => {
+    if (index < 1 || index > size()) {
+      throw new RangeError('index out of bound');
+    }
     let nodes = createNodes(Array.from(values));
 
     let value = getNode(index);
