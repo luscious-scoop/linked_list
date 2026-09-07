@@ -46,18 +46,22 @@ export function LinkedList() {
     return prev.value;
   };
 
-  const at = (index) => {
+  const getNode = (index) => {
     let temp = _head;
-    let count = 0;
+    let count = 1;
 
     while (temp !== null) {
       if (count >= index && temp !== null) {
-        return temp.value;
+        return temp;
       }
       temp = temp.next;
       count++;
     }
     return undefined;
+  };
+
+  const at = (index) => {
+    return getNode(index).value;
   };
 
   const size = () => {
@@ -116,6 +120,27 @@ export function LinkedList() {
     return oldHeadValue;
   };
 
+  const createNodes = (array) => {
+    return array.map((el) => new Node(el));
+  };
+
+  const insertAt = (index, ...values) => {
+    let nodes = createNodes(Array.from(values));
+
+    let value = getNode(index);
+    let i = 0;
+    while (value !== null && i < nodes.length) {
+      let prev = value.next;
+
+      value.next = nodes[i];
+      value.next.next = prev;
+
+      value = value.next;
+
+      i++;
+    }
+  };
+
   return {
     append,
     toString,
@@ -127,5 +152,6 @@ export function LinkedList() {
     findIndex,
     prepend,
     pop,
+    insertAt,
   };
 }
