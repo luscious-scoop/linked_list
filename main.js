@@ -12,10 +12,15 @@ let list = LinkedList();
 // list.prepend('lion');
 // list.append('crocodile');
 
+// console.log(list.toString());
+
+// list.insertAt(2, 'animal1', 'random');
+// console.log(list.toString());
+
 list.append(1);
 list.append(2);
 list.append(3);
-
-console.log(list.insertAt(100, 10, 11));
+list.prepend(90);
+list.insertAt(3, 10, 11);
 
 console.log(list.toString());

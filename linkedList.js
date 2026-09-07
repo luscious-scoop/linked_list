@@ -142,6 +142,9 @@ export function LinkedList() {
 
       i++;
     }
+    if (value.next === null) {
+      _tail = value;
+    }
   };
 
   return {
