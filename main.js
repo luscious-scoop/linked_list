@@ -2,19 +2,12 @@ import { LinkedList } from './linkedList.js';
 
 let list = LinkedList();
 
-list.append('dog');
-// list.append('cat');
-// list.append('parrot');
-// list.append('hamster');
-// list.append('snake');
-// list.append('turtle');
+list.append(1);
+list.append(2);
+list.append(3);
 
-// list.prepend('lion');
-// list.append('crocodile');
-
-// console.log(list.size());
-// console.log(list.toString());
-
-list.remove(1);
-console.log(list.head());
-// console.log(list.size());
+console.log(list.toString());
+console.log(list.size());
+list.insertAt(1, 10, 11, 12);
+console.log(list.toString());
+console.log(list.size());

@@ -47,8 +47,11 @@ export function LinkedList() {
   };
 
   const getNode = (index) => {
+    if (index < 0) {
+      return undefined;
+    }
     let temp = _head;
-    let count = 1;
+    let count = 0;
 
     while (temp !== null) {
       if (count >= index && temp !== null) {
@@ -61,7 +64,12 @@ export function LinkedList() {
   };
 
   const at = (index) => {
-    return getNode(index).value;
+    let node;
+    node = getNode(index);
+    if (!node) {
+      return node;
+    }
+    return node.value;
   };
 
   const size = () => {
@@ -89,7 +97,7 @@ export function LinkedList() {
 
   const findIndex = (value) => {
     let temp = _head;
-    let count = 1;
+    let count = 0;
 
     while (temp !== null) {
       if (value === temp.value) {
@@ -128,12 +136,19 @@ export function LinkedList() {
   };
 
   const insertAt = (index, ...values) => {
-    if (index < 1 || index > size()) {
+    if (index === 0) {
+      values.reverse().forEach((el) => {
+        prepend(el);
+      });
+      return;
+    }
+
+    if (index < 0 || index > size() - 1) {
       throw new RangeError('index out of bound');
     }
     let nodes = createNodes(Array.from(values));
 
-    let value = getNode(index);
+    let value = getNode(index - 1);
     let i = 0;
     while (value !== null && i < nodes.length) {
       let prev = value.next;
@@ -151,10 +166,10 @@ export function LinkedList() {
   };
 
   const remove = (index) => {
-    if (index < 1 || index > size()) {
+    if (index < 0 || index > size()) {
       throw new RangeError('index out of bound');
     }
-    if (index === 1) {
+    if (index === 0) {
       pop();
       return;
     }
